@@ -6,10 +6,10 @@ export class Scenario {
   @PrimaryGeneratedColumn('uuid')
   id!: string;
 
-  @Column()
+  @Column('text', { nullable: true })
   title!: string;
 
-  @Column()
+  @Column('text', { nullable: true })
   description!: string;
 
   @Column('jsonb')
@@ -21,7 +21,7 @@ export class Scenario {
   @Column('jsonb')
   imaging!: string[];
 
-  @Column()
+  @Column('text', { nullable: true })
   nurseReport!: string;
 
   @Column('jsonb')
