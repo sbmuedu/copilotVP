@@ -5,6 +5,8 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ScenarioModule } from './scenarios/scenario.module';
 import { Scenario } from './scenarios/scenario.entity';
+import { ChatModule } from './chat/chat.module';
+import { ChatModule } from './chat/chat.module';
 
 @Module({
   imports: [
@@ -23,6 +25,7 @@ import { Scenario } from './scenarios/scenario.entity';
       }),
     }),
     ScenarioModule,
+    ChatModule,
   ],
   controllers: [AppController],
   providers: [AppService],
