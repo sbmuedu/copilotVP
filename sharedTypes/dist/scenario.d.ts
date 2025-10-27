@@ -1,3 +1,8 @@
+export interface TimelineEvent {
+    timestamp: string;
+    actor: string;
+    action: string;
+}
 export interface Scenario {
     id: string;
     title: string;
@@ -7,5 +12,6 @@ export interface Scenario {
     imaging: string[];
     nurseReport: string;
     branchingLogic: Record<string, any>;
+    timeline: TimelineEvent[];
 }
 //# sourceMappingURL=scenario.d.ts.map
