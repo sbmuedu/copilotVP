@@ -1,0 +1,13 @@
+// tsconfig.spec.json
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist-spec", // Optional: output compiled tests to a different folder
+    "types": ["jest", "node"] // Add 'jest' and 'node' types for the test environment
+  },
+  "include": [
+    "src/**/*spec.ts",
+    "src/**/*test.ts",
+    "test/**/*.ts" // Make sure this includes your test files
+  ]
+}
