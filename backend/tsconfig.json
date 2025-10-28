@@ -23,6 +23,7 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
+    "allowJs": true,
     // "types": ["node"]
   },
   "ts-node": {
