@@ -6,6 +6,7 @@ import { VitalsPanel } from "@/components/VitalsPanel";
 import { LabsPanel } from "@/components/LabsPanel";
 import { ImagingPanel } from "@/components/ImagingPanel";
 import { ChatPanel } from "@/components/ChatPanel";
+import { OrderPanel } from '@/components/OrderPanel';
 
 export default function ScenarioPage() {
   const { id } = useRouter().query;
@@ -27,34 +28,14 @@ export default function ScenarioPage() {
       <p className="text-gray-700">{scenario.description}</p>
 
       <section>
-        {/* <h2 className="text-xl font-semibold">Initial Vitals</h2>
-        <ul className="list-disc pl-6">
-          {Object.entries(scenario.initialVitals).map(([key, value]) => (
-            <li key={key}>
-              {key}: {value}
-            </li>
-          ))}
-        </ul> */}
         <VitalsPanel vitals={scenario.initialVitals} />
       </section>
 
       <section>
-        {/* <h2 className="text-xl font-semibold">Labs</h2>
-        <ul className="list-disc pl-6">
-          {scenario.labs.map((lab, i) => (
-            <li key={i}>{lab}</li>
-          ))}
-        </ul> */}
         <LabsPanel labs={scenario.labs} />
       </section>
 
       <section>
-        {/* <h2 className="text-xl font-semibold">Imaging</h2>
-        <ul className="list-disc pl-6">
-          {scenario.imaging.map((img, i) => (
-            <li key={i}>{img}</li>
-          ))}
-        </ul> */}
         <ImagingPanel imaging={scenario.imaging} />
       </section>
 
@@ -62,7 +43,11 @@ export default function ScenarioPage() {
         <h2 className="text-xl font-semibold">Nurse Report</h2>
         <p className="italic">{scenario.nurseReport}</p>
       </section>
+
+      <section>
       <ChatPanel scenarioId={scenario.id} />
+      <OrderPanel scenarioId={scenario.id} />
+      </section>
     </div>
   );
 }

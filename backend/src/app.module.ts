@@ -6,7 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ScenarioModule } from './scenarios/scenario.module';
 import { Scenario } from './scenarios/scenario.entity';
 import { ChatModule } from './chat/chat.module';
-import { ChatModule } from './chat/chat.module';
+import { OrderModule } from './order/order.module';
 
 @Module({
   imports: [
@@ -26,6 +26,7 @@ import { ChatModule } from './chat/chat.module';
     }),
     ScenarioModule,
     ChatModule,
+    OrderModule,
   ],
   controllers: [AppController],
   providers: [AppService],
