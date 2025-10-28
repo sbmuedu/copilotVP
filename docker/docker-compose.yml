@@ -48,32 +48,32 @@ services:
   #   depends_on:
   #     - postgres
 
-  # ollama:
-  #   image: ollama/ollama:latest
-  #   container_name: FC_ollama
-  #   ports:
-  #     - "11434:11434"
-  #   volumes:
-  #     - d:/reza/ollama:/root/.ollama
-  #   # command: >
-  #   #   sh -c "
-  #   #     ollama pull mistral &&
-  #   #     ollama pull llama3:8b &&
-  #   #     sleep 10 &&
-  #   #     ./ollama serve
-  #   #   "
-  #   deploy:
-  #     resources:
-  #       reservations:
-  #         devices:
-  #           - driver: nvidia
-  #             count: all
-  #             capabilities: [gpu]
-  #   environment:
-  #     - NVIDIA_VISIBLE_DEVICES=all
-  #   restart: unless-stopped
-  #   networks:
-  #     - app-network
+  ollama:
+    image: ollama/ollama:latest
+    container_name: FC_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - d:/reza/ollama:/root/.ollama
+    # command: >
+    #   sh -c "
+    #     ollama pull mistral &&
+    #     ollama pull llama3:8b &&
+    #     sleep 10 &&
+    #     ./ollama serve
+    #   "
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    restart: unless-stopped
+    networks:
+      - app-network
 
   # keycloak:
   #   image: quay.io/keycloak/keycloak:latest

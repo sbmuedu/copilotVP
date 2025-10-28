@@ -27,7 +27,7 @@ export const OrderPanel: React.FC<OrderPanelProps> = ({ scenarioId }) => {
     <div className="bg-white shadow rounded p-4 space-y-4">
       <h2 className="text-lg font-semibold">Place Orders</h2>
       <div className="flex gap-2">
-        <select
+        <select title='temp'
           className="border rounded px-2 py-1"
           value={orderType}
           onChange={e => setOrderType(e.target.value)}

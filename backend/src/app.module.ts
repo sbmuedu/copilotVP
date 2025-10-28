@@ -5,8 +5,9 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ScenarioModule } from './scenarios/scenario.module';
 import { Scenario } from './scenarios/scenario.entity';
+import { TimelineEvent } from './timeline/timeline.entity';
 import { ChatModule } from './chat/chat.module';
-import { OrderModule } from './order/order.module';
+import { OrdersModule } from './orders/orders.module';
 
 @Module({
   imports: [
@@ -18,7 +19,7 @@ import { OrderModule } from './order/order.module';
         username: 'medsim',
         password: 'reza1',
         database: 'medsim_db',
-        entities: [Scenario],
+        entities: [Scenario, TimelineEvent],
         // entities: [__dirname + '/../**/*.entity.{ts,js}'],
         // autoLoadEntities: true,
         synchronize: true,
@@ -26,7 +27,7 @@ import { OrderModule } from './order/order.module';
     }),
     ScenarioModule,
     ChatModule,
-    OrderModule,
+    OrdersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
